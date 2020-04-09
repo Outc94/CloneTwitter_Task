@@ -1,2 +1,15 @@
-<h1>Tweets#index</h1>
-<p>Find me in app/views/tweets/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+<h1>Tweets</h1>
+<%= link_to 'New Tweet', new_tweet_path %>
+    <% @tweets.each do |tweet| %>
+      <hr>
+      <div>
+        <%= tweet.content %>
+      </div>
+      <div id="posts">
+        <%= link_to 'Show', tweet %>
+        <%= link_to 'Edit', edit_tweet_path(tweet), data: { confirm: 'Are you sure to edit this tweet？' } %>
+        <%= link_to 'Delete', tweet, method: :delete, data: { confirm: 'Are you sure to delete this tweet?' } %>
+      </div>
+    <% end %>
+<br>
