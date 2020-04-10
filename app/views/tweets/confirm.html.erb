@@ -6,7 +6,3 @@
     <p>Body:<%= @tweet.content %></p>
   <%= form.submit  "Submit" %>
 <% end %>
-<%= form_with(model: @tweeet, url: new_tweet_path, method: 'get') do |form| %>
-  <%= form.hidden_field :content %>
-<%= link_to 'Back', tweets_path %>
-<% end %>
